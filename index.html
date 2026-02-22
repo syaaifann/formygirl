@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesan Khusus Untukmu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #4c1d95 0%,
+          #7c3aed 50%,
+          #c084fc 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hidden-content {
+        display: none;
+      }
+
+      .shimmer {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Login Section -->
+    <div
+      id="loginSection"
+      class="w-full max-w-md p-8 rounded-3xl glass-card text-center text-white fade-in"
+    >
+      <div class="mb-6">
+        <div
+          class="w-20 h-20 bg-purple-500/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-300/50"
+        >
+          <i class="fas fa-lock text-3xl"></i>
+        </div>
+        <h1 class="text-2xl font-semibold mb-2">Pesan Terkunci</h1>
+        <p class="text-purple-100 text-sm">
+          Masukkan kata sandi untuk membaca pesan ini.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <input
+          type="password"
+          id="passwordInput"
+          class="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-center"
+          placeholder="Kata sandi..."
+        />
+
+        <button
+          onclick="checkPassword()"
+          class="w-full py-3 bg-white text-purple-700 font-bold rounded-xl hover:bg-purple-100 transition-colors shadow-lg active:scale-95 duration-200"
+        >
+          Buka Pesan
+        </button>
+        <p
+          id="errorMessage"
+          class="text-red-300 text-xs mt-2 opacity-0 transition-opacity"
+        >
+          Kata sandi nama kamu. Silakan coba lagi.
+        </p>
+      </div>
+    </div>
+
+    <!-- Message Section -->
+    <div
+      id="messageSection"
+      class="hidden-content w-full max-w-2xl p-8 md:p-12 rounded-3xl glass-card text-white fade-in"
+    >
+      <div class="text-center mb-10">
+        <span
+          class="inline-block px-4 py-1 rounded-full bg-purple-500/30 text-xs tracking-widest uppercase mb-4 border border-purple-300/30"
+          >Pesan Rahasia</span
+        >
+        <h2 class="text-3xl font-serif italic mb-2">Untukmu,</h2>
+        <div class="h-1 w-20 bg-white/30 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="space-y-6 text-purple-50 leading-relaxed text-lg font-light">
+        <p class="font-medium text-white">
+          Hai cantik gimana kabarmu? Aku harap kamu baik² saja disana.
+        </p>
+
+        <p>
+          Ini adalah pesan yang cukup penting untukmu. Baca ini dengan hati
+          tegas dan ikhlas.
+        </p>
+
+        <p>
+          Hari demi hari sudah kita lewati dari kita dulu yang masih suka
+          bersenda gurau di chat ataupun bertemu langsung. Dari rumahmu yang
+          dulu disitu yang sekarang jadi disana semakin jauh dari pandangan dan
+          kenangan kita waktu itu.
+        </p>
+
+        <div
+          class="bg-white/5 p-6 rounded-2xl border-l-4 border-purple-300 italic"
+        >
+          Tampaknya masih terjadi dimana mengembalikan kepercayaan emang
+          sangatlah sulit, sudah lama aku memendam ini namun saatnya kamu tau
+          yang sebenarnya.
+        </div>
+
+        <p>
+          Kenangan kita perlahan terkikis begitu saja seolah olah tidak direstui
+          oleh keadaan dan orang orang terdekatmu yang tidak berpihak padaku.
+          Mungkin kamu masih tidak tau apa yang terjadi namun aku mengatakan
+          yang sebenarnya telah aku rasakan saat kamu tidak tau apa² disana.
+        </p>
+
+        <p>
+          Aku tidak bisa menjelaskan secara rinci tentang hal ini yang pasti
+          karena aku tidak mau kamu memandang buruk orang terdekatmu demi aku
+          yang serba kurang ini.
+        </p>
+
+        <div class="space-y-2">
+          <p class="text-white font-semibold">Inti dari pesan ini:</p>
+          <p>
+            Mempertahankan hubungan memang sulit tapi akan lebih sulit jika
+            tidak direstui oleh orang terdekatmu. Aku memilih akan pergi darimu
+            saat ini juga. Aku tahu ini berat bagimu dan begitupun aku. Harapan
+            dari keputusanku yang terpaksa ini dapat membuatmu melupakanku.
+          </p>
+        </div>
+
+        <div class="pt-8 border-t border-white/10 mt-10">
+          <p class="text-white font-semibold mb-2">Pesan akhir:</p>
+          <p>
+            Terimakasih telah membuatku merasa paling disayang oleh perempuan
+            sepertimu, jujur saja ini hubungan paling lama yang pernah aku alami
+            denganmu. Teruslah jadi perempuan kuat dan sabar.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center text-sm text-purple-200/60">— Selesai</div>
+    </div>
+
+    <script>
+      // Password yang disetel (Ganti di sini jika ingin mengubahnya)
+      const SECRET_PASSWORD = "aulia";
+
+      function checkPassword() {
+        const input = document.getElementById("passwordInput").value;
+        const errorMsg = document.getElementById("errorMessage");
+        const loginSection = document.getElementById("loginSection");
+        const messageSection = document.getElementById("messageSection");
+
+        if (input.toLowerCase() === SECRET_PASSWORD.toLowerCase()) {
+          loginSection.style.display = "none";
+          messageSection.classList.remove("hidden-content");
+          window.scrollTo(0, 0);
+        } else {
+          errorMsg.style.opacity = "1";
+          // Animasi getar untuk input salah
+          const inputEl = document.getElementById("passwordInput");
+          inputEl.classList.add("translate-x-1");
+          setTimeout(() => inputEl.classList.remove("translate-x-1"), 100);
+        }
+      }
+
+      // Support enter key
+      document
+        .getElementById("passwordInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            checkPassword();
+          }
+        });
+    </script>
+  </body>
+</html>
